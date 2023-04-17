@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AppointmentScheduler.Models.appointments>
+
+@{
+    ViewData["Title"] = "appointments";
+}
+
+<h1>My Appointments</h1>
+
+<p>
+    <a asp-action="AddAppointment">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+           @* <th>
+                Appointment Id
+            </th>*@
+            <th>
+                Appointment With
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Topic
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (appointments item in ViewBag.appointmentsList)
+        {
+            <form method="post">
+            <tr>
+                @*<td><input required type="number" readonly name="job-id" value="@item.appointment_id" class="form-control" /></td>*@
+                <td><input required type="text" readonly name="emp_id" value="@item.emp_id" class="form-control" /></td>
+                <td><input required type="text" readonly name="appointment_date" value="@item.appointment_date" class="form-control" /></td>
+                <td><input required type="text" readonly name="appointment_time" value="@item.appointment_time" class="form-control" /></td>
+                <td><input required type="text" readonly name="topic" value="@item.topic" class="form-control" /></td>
+                <td><button class="btn btn-success"> @Html.ActionLink("Edit", "Edit", new {  id=item.appointment_id  })</button></td>
+                @*<td><button class="btn btn-success" asp-action="Edit" type="submit">Edit</button></td>*@
+                <td>
+                    @*<button class="btn btn-danger" asp-action="Delete" type="submit">Delete</button>*@
+                    <button class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new {  id=item.appointment_id  })</button>
+
+                </td>
+            </tr>
+            </form>
+        }
+    </tbody>
+</table>

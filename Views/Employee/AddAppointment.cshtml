@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AppointmentScheduler.Models.appointments>
+
+@{
+    ViewData["Title"] = "AddAppointment";
+}
+
+<h1>AddAppointment</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Apointment With
+            </th>
+            <th>
+                Appointment date
+            </th>
+            <th>
+                Appointment Time
+            </th>
+            <th>
+                Topic
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <form method="post">
+                <tr>
+                    <td>
+                        <input required type="number" name="appointment_with" class="form-control" />
+                    </td>
+                <td>
+                    <input required type="date" name="appointment_date" class="form-control" />
+                </td>
+                <td>
+                    <input required type="time" name="appointment_time" class="form-control" />
+                </td>
+                <td>
+                    <input required type="text" name="topic" class="form-control" />
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn-success">submit</button>
+
+                    </td>
+
+                </tr>
+        </form>
+    </tbody>
+</table>

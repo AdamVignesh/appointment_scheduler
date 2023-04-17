@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AppointmentScheduler.Models.employees>
+
+
+
+            <h4 style="text-align : center">Register</h4>
+    <form method="post">
+        <div class="row mb-3 p-3">
+            <label class="col-sm-2 col-form-label">Employee Id :</label>
+            <div class="col-sm-6">
+                <input required type="number" name="emp-id" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3 p-3">
+            <label class="col-sm-2 col-form-label">Employee Name :</label>
+            <div class="col-sm-6">
+                <input required type="text" name="emp-name" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3 p-3">
+            <label class="col-sm-2 col-form-label">Domain :</label>
+            <div class="col-sm-6">
+                <input required type="text" name="domain" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3 p-3">
+            <label class="col-sm-2 col-form-label">Manager Id :</label>
+            <div class="col-sm-6">
+                <input required type="number" name="manager-id" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3 p-3">
+            <label class="col-sm-2 col-form-label">Password :</label>
+            <div class="col-sm-6">
+                <input required type="password" name="pass" class="form-control" />
+            </div>
+        </div>
+    <button type="submit" class="btn-success">submit</button>
+    </form>
+

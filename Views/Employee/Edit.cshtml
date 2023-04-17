@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AppointmentScheduler.Models.appointments>
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Appointment with
+            </th>
+            <th>
+                appointment_date
+            </th>
+            <th>
+                appointment_time
+            </th>
+            <th>
+                topic
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            @foreach (appointments item in ViewBag.appointmentsList)
+            {
+                <form method="post">
+            <tr>
+                        @*<td><input required type="number" readonly name="job-id" value="@item.appointment_id" class="form-control" /></td>*@
+                <td><input required type="text"  name="emp_id" value="@item.emp_id" class="form-control" /></td>
+                <td><input required type="text"  name="appointment_date" value="@item.appointment_date.Date" class="form-control" /></td>
+                <td><input required type="text"  name="appointment_time" value="@item.appointment_time" class="form-control" /></td>
+                <td><input required type="text"  name="topic" value="@item.topic" class="form-control" /></td>
+                <td><button class="btn btn-success" type="submit">apply</button></td>
+
+                <td>
+                    <button class="btn btn-danger" asp-action="appointments" type="cancel">cancel</button>
+                </td>
+            </tr>
+            </form>
+            }
+        
+       @* <tr>
+            <td>ViewBag.my_emp_id</td>
+            <td>
+                @ViewBag.emp_id
+            </td>
+            <td>
+                @ViewBag.appointment_date
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>*@
+
+    </tbody>
+</table>

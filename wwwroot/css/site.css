@@ -1,0 +1,29 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.center {
+    margin: 0px auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.text-field {
+        width: 30%;
+}
